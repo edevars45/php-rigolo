@@ -1,0 +1,1 @@
+Texte ajouté avec fopen en mode 'w'
