@@ -9,3 +9,7 @@
 
 # Garder tous les fichiers PHP
 !*.php
+
+# Garder tous les fichiers log view
+logs/
+*.log

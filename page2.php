@@ -1,20 +1,31 @@
 <?php
-// page2.php
 session_start();
+
+// (optionnel) logger
+if (file_exists(__DIR__ . '/inc/logger.php')) {
+  require __DIR__ . '/inc/logger.php';
+  log_event('page_view', ['page' => 'page2']);
+  log_event('session_read', [
+    'favcolor' => $_SESSION['favcolor'] ?? null,
+    'animal'   => $_SESSION['animal'] ?? null,
+    'time'     => $_SESSION['time']   ?? null,
+  ]);
+}
 ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Page 2 - Session</title>
+  <title>Page 2</title>
 </head>
 <body>
-  <h1>Page 2</h1>
-  <p>Couleur favorite : <?= $_SESSION['favcolor'] ?? 'non définie' ?></p>
-  <p>Animal : <?= $_SESSION['animal'] ?? 'non défini' ?></p>
-  <p>Heure de création : <?= isset($_SESSION['time']) ? date('Y-m-d H:i:s', $_SESSION['time']) : 'non définie' ?></p>
+  <h1>📄 VOUS ÊTES SUR LA PAGE 2</h1>
+  <ul>
+    <li>Couleur favorite : <?= htmlspecialchars($_SESSION['favcolor'] ?? '—', ENT_QUOTES) ?></li>
+    <li>Animal : <?= htmlspecialchars($_SESSION['animal'] ?? '—', ENT_QUOTES) ?></li>
+    <li>Heure de création : <?= isset($_SESSION['time']) ? date('Y-m-d H:i:s', $_SESSION['time']) : '—' ?></li>
+  </ul>
 
- <a href="session_start.php">Retour à la page 1</a>
-
+  <a href="session_start.php">⬅️ Retour à la page 1</a>
 </body>
 </html>
