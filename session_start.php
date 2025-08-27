@@ -43,16 +43,18 @@
         true si la session démarre correctement
 
         false sinon
+
     <h2>Notes importantes</h2>
 
-    Toujours appeler <code>session_start()</code> avant tout affichage HTML (sinon erreur “headers already sent”).
+    Toujours appeler <code>session_start()</code> avant tout affichage HTML (sinon erreur) <strong>“headers already
+        sent”</strong>.
 
     La session utilise un cookie (par défaut PHPSESSID) pour identifier l’utilisateur.
 
     On peut aussi passer l’ID de session via l’URL (SID).
     </p>
 
-      <!-- ===================== Exemple code===================== -->
+    <!-- ===================== Exemple code===================== -->
     <pre>&lt;?php
             //Exemple
            session_start(); // Démarre la session
@@ -63,8 +65,25 @@ $_SESSION['animal']   = 'cat';
 $_SESSION['time']     = time();
 
 echo "Bienvenue à la page 1";
-echo '<br><a href="page2.php">Aller à la page 2</a>';
+<a href="page2.php">Aller à la page 2</a>';
+
         ?&gt;</pre>
+
+        
+        
+        <?php
+session_start(); // Démarre la session
+
+// On enregistre des données
+$_SESSION['favcolor'] = 'green';
+$_SESSION['animal']   = 'cat';
+$_SESSION['time']     = time();
+
+
+?>
+<h3>Résultat</h3>
+
+Bienvenue à la page 1
 
 </body>
 
