@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Superglobale $_GET — Exemples clairs</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
   <h1>Superglobale <code>$_GET</code></h1>
@@ -17,6 +19,7 @@
     sans <code>global</code>.
   </p>
 
+  
   <!-- ===================== Exemple 1 ===================== -->
   <section>
     <h2>Exemple 1 — Bonjour &lt;nom&gt;</h2>
@@ -78,7 +81,7 @@ echo 'Bonjour ' . ($prenom !== '' ? $prenom . ' ' : '') . ($nom !== '' ? $nom : 
     <h2>Exemple 4 — Nombre (cast + contrôle)</h2>
     <p><strong>URL à tester :</strong> <code>http://exemple.com/page.php?age=30</code></p>
     <h3>Code</h3>
-<pre>&lt;?php
+    <pre>&lt;?php
 // 1) On récupère le paramètre "age" (string) ou null s'il est absent — évite l'erreur "Undefined index"
 $age_str = $_GET['age'] ?? null;
 
@@ -103,7 +106,8 @@ if ($age_str !== null &amp;&amp; filter_var($age_str, FILTER_VALIDATE_INT) !== f
   <!-- ===================== Exemple 5 ===================== -->
   <section>
     <h2>Exemple 5 — Listes / tableaux dans l’URL</h2>
-    <p><strong>URL à tester :</strong> <code>http://exemple.com/page.php?interets[]=PHP&amp;interets[]=JS&amp;interets[]=SQL</code></p>
+    <p><strong>URL à tester :</strong>
+      <code>http://exemple.com/page.php?interets[]=PHP&amp;interets[]=JS&amp;interets[]=SQL</code></p>
     <h3>Code</h3>
     <pre>&lt;?php
 // 1) "interets[]" donne un tableau dans $_GET
@@ -168,7 +172,8 @@ echo $debug ? 'Mode debug: ON' : 'Mode debug: OFF';
   <section>
     <h2>Notes utiles</h2>
     <ul>
-      <li>Toujours <strong>échapper</strong> ce que vous affichez : <code>htmlspecialchars()</code> (idéalement avec <code>ENT_QUOTES | ENT_SUBSTITUTE</code> et encodage <code>UTF-8</code>).</li>
+      <li>Toujours <strong>échapper</strong> ce que vous affichez : <code>htmlspecialchars()</code> (idéalement avec
+        <code>ENT_QUOTES | ENT_SUBSTITUTE</code> et encodage <code>UTF-8</code>).</li>
       <li>Les valeurs de <code>$_GET</code> arrivent en <strong>chaînes</strong> (strings).</li>
       <li>Les espaces/accents sont encodés en URL (ex. <code>%20</code>, <code>%C3%A9</code>).</li>
       <li>La partie après <code>#</code> (fragment) n’est <strong>jamais</strong> envoyée au serveur.</li>
@@ -185,4 +190,5 @@ function e(string $s): string {
   </section>
 
 </body>
+
 </html>
