@@ -21,20 +21,21 @@
     <h2>Exemple 1 — Décomposition simple d’un tableau</h2>
     <h3>Code</h3>
     <pre>&lt;?php
-// Petite fonction d'échappement pour l'affichage HTML
+/ Petite fonction d'échappement pour l'affichage HTML
 function e(string $s): string { return htmlspecialchars($s, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8'); }
 
-// 1) Un tableau indexé (positions 0,1,2)
-$coords = [10, 20, 30];
+// 1) Un tableau indexé (positions 0, 1, 2)
+$personne = ['Luna', 28, 'Lyon']; // 0 => 'Luna', 1 => 28, 2 => 'Lyon'
 
-// 2) On "dépaquette" en 3 variables
-list($x, $y, $z) = $coords;
+// 2) On "dépaquette" (déstructure) en 3 variables
+list($prenom, $age, $ville) = $personne;
 
 // 3) Affichage
-echo 'x=' . e((string)$x) . ', y=' . e((string)$y) . ', z=' . e((string)$z);
+echo 'Prénom=' . e((string)$prenom) . ', Âge=' . e((string)$age) . ', Ville=' . e((string)$ville);
 ?&gt;</pre>
     <h3>Affichage</h3>
-    <p class="result">x=10, y=20, z=30</p>
+
+  <p>Prénom=Luna, Âge=28, Ville=Lyon</p>
   </section>
 
   <!-- ===================== Exemple 2 ===================== -->
