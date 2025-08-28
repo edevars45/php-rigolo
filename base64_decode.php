@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fonction base64_decode() — Exemples clairs</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
 
   <h1>Fonction <code>base64_decode()</code></h1>
-  <p><strong>Idée clé :</strong> <code>base64_decode()</code> fait l’inverse de <code>base64_encode()</code> → il transforme une chaîne Base64 en texte/données utiles.</p>
+  <p><strong>Idée clé :</strong> <code>base64_decode()</code> fait l’inverse de <code>base64_encode()</code> → il
+    transforme une chaîne Base64 en texte/données utiles.</p>
 
   <!-- ===================== Exemple 1 ===================== -->
   <h2>Exemple 1 — Chaîne simple</h2>
   <h3>Code</h3>
   <pre>&lt;?php
-// 1) Je prépare une chaîne encodée en Base64 ("This is an encoded string")
-$str = 'VGhpcyBpcyBhbiBlbmNvZGVkIHN0cmluZw==';
+// 1) Je prépare une chaîne encodée en Base64 ("
+Ceci est une chaîne codée")
+$str = 'Q2VjaSBlc3QgdW5lIGNoYcOubmUgY29kw6ll';
 
 // 2) Je décode la chaîne Base64 → j'obtiens le texte lisible
 $decoded = base64_decode($str);
@@ -74,7 +78,7 @@ iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAH0lEQVQoU2NkYGD4z0ABYBw1gGE0GJgG
   <p class="result">
     <!-- Affichage réel : petit carré PNG 10×10 -->
     <img alt="carré" width="20" height="20"
-         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAH0lEQVQoU2NkYGD4z0ABYBw1gGE0GJgGJgYQyGAAAO4lB5q0mI9QAAAABJRU5ErkJggg==" />
+      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAH0lEQVQoU2NkYGD4z0ABYBw1gGE0GJgGJgYQyGAAAO4lB5q0mI9QAAAABJRU5ErkJggg==" />
     &nbsp; (petit PNG 10×10)
   </p>
 
@@ -106,4 +110,5 @@ echo 'OK → fichier output.png créé';
   <p class="result">OK → fichier output.png créé</p>
 
 </body>
+
 </html>
