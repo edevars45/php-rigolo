@@ -7,7 +7,7 @@
     <title>Fonction <code>simplexml_load_file()</code></title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-
+<html>
 <body>
     <h1>Fonction <code>simplexml_load_file()</code></h1>
     <h2>Decription</h2>
@@ -38,11 +38,11 @@
 &lt;?php
 exemple description:
 simplexml_load_file(
-    string $filename,                          // « Où est le fichier ? » → le chemin du fichier XML à lire.
-    ?string $class_name = SimpleXMLElement::class, // « Sous quelle forme d’objet je veux le résultat ? » → on garde la valeur par défaut.
-    int $options = 0,                          // « Options de lecture (rares) » → 0 = aucune option spéciale.
-    string $namespace_or_prefix = "",          // « Espace de noms XML (avancé) » → on laisse vide si on ne s’en sert pas.
-    bool $is_prefix = false                    // « Le paramètre précédent est-il un préfixe ? » → false par défaut (avancé).
+    string $filename,                          //  Où est le fichier ?  → le chemin du fichier XML à lire.
+    ?string $class_name = SimpleXMLElement::class, //  Sous quelle forme d’objet je veux le résultat ?  → on garde la valeur par défaut.
+    int $options = 0,                          //  Options de lecture (rares)  → 0 = aucune option spéciale.
+    string $namespace_or_prefix = "",          //  Espace de noms XML (avancé)  → on laisse vide si on ne s’en sert pas.
+    bool $is_prefix = false                    //  Le paramètre précédent est-il un préfixe ?  → false par défaut (avancé).
 ): SimpleXMLElement|false                      // Résultat : soit un objet SimpleXMLElement, soit false en cas d’échec.
 
 
@@ -53,9 +53,9 @@ exemple:
 if (file_exists('examples/book.xml')) {
     $xml = simplexml_load_file('examples/book.xml');
 
-    print_r($xml); // LIGNE 41 : « J’affiche tout l’objet pour voir sa structure et son contenu. »
-} else {            // LIGNE 44 : « Si le fichier n’existe pas… »
-    exit('Echec lors de l\'ouverture du fichier examples/test.xml.'); « J’arrête le script avec un message clair. »
+    print_r($xml); //   J’affiche tout l’objet pour voir sa structure et son contenu. 
+} else {            //  Si le fichier n’existe pas
+    exit('Echec lors de l\'ouverture du fichier examples/test.xml.');  J’arrête le script avec un message clair. 
 }
 
 
@@ -78,12 +78,36 @@ if (file_exists('examples/book.xml')) {
 ?>
 
 <h3>infos</h3>
-<p> file_exists($chemin) → “le fichier est là ?”
+<p> file_exists($chemin) → le fichier est là ?
 
-    simplexml_load_file($chemin) → “je lis le XML → j’obtiens un objet facile à parcourir”
+    simplexml_load_file($chemin) → je lis le XML → j’obtiens un objet facile à parcourir
 
-    print_r($xml) → “montre-moi rapidement ce qu’il y a dedans”
+    print_r($xml) → montre-moi rapidement ce qu’il y a dedans
 
-    exit("message") → “stoppe tout et affiche l’erreur”</p>
+    exit("message") → stoppe tout et affiche l’erreur</p>
 
+
+
+    <h3>Définition XML</h3>
+    <p>
+      XML sert à organiser et échanger des données. Ce n’est pas pour la mise en forme (ça, c’est HTML/CSS),
+      mais pour structurer l’information.
+    </p>
+
+    <h3>Exemple de contenu XML (affiché)</h3>
+ <?php
+$code = <<<'CODE'
+<?php
+$xml = <<<'XML'
+<personne>
+  <prenom>Luna</prenom>
+  <age>8</age>
+</personne>
+XML;
+?>
+CODE;
+
+echo '<pre><code>', htmlspecialchars($code, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8'), '</code></pre>';
+
+?>
 </html>
